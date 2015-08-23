@@ -1,4 +1,4 @@
-run_analysis <- function(dataset_dir = "UCI HAR Dataset",output_file="tidy_means.csv") {
+run_analysis <- function(dataset_dir = "UCI HAR Dataset",output_file="tidy_means.txt") {
   # Dataset file paths
   test_data_path = paste(dataset_dir,"test/X_test.txt",sep="/")
   test_labels_path = paste(dataset_dir,"test/y_test.txt",sep="/")
@@ -56,7 +56,7 @@ run_analysis <- function(dataset_dir = "UCI HAR Dataset",output_file="tidy_means
   
   # Write out tidy data set
   # load with read.csv(file,row.names=1)
-  write.csv(means,output_file)
+  write.table(means,output_file,row.names=F)
   
   return(means)
 }

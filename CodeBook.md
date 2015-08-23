@@ -1,7 +1,7 @@
 Raw Data
 --------
 
-The original data from Human Activity Recognition Using Smartphones Dataset, see 'getdata_projectfiles_UCI HAR Dataset.zip'
+The original data is from Human Activity Recognition Using Smartphones Dataset, see 'getdata_projectfiles_UCI HAR Dataset.zip'
 
 This dataset contains accelerometer and gyroscope observation for 6 types of activities performed by 30 subjects.
 
@@ -67,14 +67,14 @@ The 'run_analysis.R' scripts performs the following steps:
 * Features of interest are selected from this combined data frame using the name coding rule above.
 * The mean value for each of these features is then calculated with respect to activity label and subject ID factors.
 * The results are compounded into a data frame with one row for each factor combination and the corresponding means for each feature.
-* This data frame is written to a csv file, and is also returned to the caller.
+* This data frame is written to 'tidy_means.txt' using write.table, and is also returned to the caller.
 	
 CodeBook
 --------
 
-The 'tidy_means.csv' file contains the result of the analysis outlined above.
+The 'tidy_means.txt' file contains the result of the analysis outlined above.
 
-It can be read back into R by running 'means_df <- read.csv("tidy_means.csv",row.names=1)'.
+It can be read back into R by running 'means_df <- read.table("tidy_means.txt")'.
 
 The first two columns of the data frame are the factors for which the means were calculated, the subject ID and the activity performed, respectively.
 
