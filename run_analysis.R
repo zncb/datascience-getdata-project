@@ -33,7 +33,7 @@ run_analysis <- function(dataset_dir = "UCI HAR Dataset",output_file="tidy_means
   # Select mean/std features
   sel_feats <- append(grep(".*mean.*",feature_names),grep(".*std.*",feature_names))
   sel_feat_names <- as.vector(sapply(sel_feats, function(x) { feature_names[x] }))
-  feat_range = 1:length(sel_feats)
+  feat_range <- 1:length(sel_feats)
   
   # Include Activity and Subject factors
   sel_feats <- append(sel_feats,c(1,2)+length(feature_names))
@@ -49,7 +49,7 @@ run_analysis <- function(dataset_dir = "UCI HAR Dataset",output_file="tidy_means
     }
     dim(l) <- NULL
     z <- cbind(x,l)
-    names(z)[dim(z)[2]] <- sel_feat_names[y]
+    names(z)[dim(z)[2]] <- paste('mean(',sel_feat_names[y],')',sep="")
     return(z)
   }
   means <- Reduce(mean_tapply,feat_range,init=NULL)
