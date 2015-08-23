@@ -62,12 +62,12 @@ List of features selected:
 
 The 'run_analysis.R' scripts performs the following steps:
 
-	* Feature names, activity labels and subject IDs are recombined with their respective test and training observations
-	* All observations from both datasets are merged into a single data frame
-	* Features of interest are selected from this combined data frame using the name coding rule above.
-	* The mean value for each of these features is then calculated with respect to activity label and subject ID factors.
-	* The results are compounded into a data frame with one row for each factor combination and the corresponding means for each feature.
-	* This data frame is written to a csv file, and is also returned to the caller.
+* Feature names, activity labels and subject IDs are recombined with their respective test and training observations
+* All observations from both datasets are merged into a single data frame
+* Features of interest are selected from this combined data frame using the name coding rule above.
+* The mean value for each of these features is then calculated with respect to activity label and subject ID factors.
+* The results are compounded into a data frame with one row for each factor combination and the corresponding means for each feature.
+* This data frame is written to a csv file, and is also returned to the caller.
 	
 CodeBook
 --------
